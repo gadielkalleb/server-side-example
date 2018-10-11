@@ -1,12 +1,10 @@
 <% include partials/header %> 
   
 
-  <h1 style="margin-right: 70%;" >Lista de Produtos</h1>
+  <h1 style="margin-right: 70%;" ><%= results.titulo || 'Lista de Produtos' %></h1>
   <br/>
-   
+    <p><%= results.data.length %> produtos encontrados</p>
     <br/>
-    
- 
     <ul class="list-group">
       <% for(let i = 0; i < results.data.length; i++) { %> 
         <li class="list-group-item">
@@ -26,12 +24,8 @@
         </li>
       <% } %>
     </ul>
-  
   <br/>
 
   <% include partials/pagination  %> 
-
-  
-
 
 <% include partials/footer %> 

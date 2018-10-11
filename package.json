@@ -5,14 +5,19 @@
   "main": "index.js",
   "author": "Gadiel Kaleb",
   "license": "MIT",
+  "scripts": {
+    "start" : "node index.js"
+  },
   "dependencies": {
     "body-parser": "^1.18.3",
     "chalk": "^2.4.1",
     "cluster": "^0.7.7",
+    "compression": "^1.7.3",
     "cors": "^2.8.4",
+    "dotenv": "^6.1.0",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
-    "helmet": "^3.13.0",
+    "helmet": "^3.14.0",
     "logplease": "^1.2.15",
     "mongoose": "^5.3.1",
     "morgan": "^1.9.1",

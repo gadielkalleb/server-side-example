@@ -8,6 +8,8 @@ const express = require('express')
 const cluster = require('cluster')
 const Logger = require('logplease')
 const bodyParser = require('body-parser')
+const helmet = require('helmet');
+const compression = require('compression')
 
 const logger = Logger.create('log')
 
@@ -41,6 +43,7 @@ if (cluster.isMaster) {
 	app.use(cors())
 	app.use(morgan('dev'))
 	app.use(helmet())
+	app.use(compression());
 	app.use(bodyParser.json({
 		limit: '50mb'
 	}))
