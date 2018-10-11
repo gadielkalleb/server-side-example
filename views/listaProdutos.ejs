@@ -1,0 +1,35 @@
+<% include partials/header %> 
+  
+  <h1 style="margin-right: 70%;" ><%= results.titulo || 'Lista de Produtos' %></h1>
+  <br/>
+  <% if (results.titulo) { %> 
+  <p><%= results.totalPrd -1 %> produtos encontrados</p>
+  <% } %>
+  <br/>
+  <ul class="list-group">
+    <% for(let i = 0; i < results.data.length; i++) { %> 
+      <li class="list-group-item">
+        <div style="display: -webkit-box;">
+
+        <% results.data[i].fotos.forEach(foto => { %>
+            <img src= <%= foto %> /> 
+         <% }) %>
+          <p style="margin: 10px 0 10px 30px;">
+            <%= results.data[i].nome %><br>
+            <span style="font-size: small; color: #8a8a8a" >Classic | - <%= results.data[i].descricao %></span>
+          </p>
+          <p style="margin: 25px 0px 0 33%;font-size: small;">
+            <span style="color: #8a8a8a; text-decoration: line-through;">R$ <%= results.data[i].ultimovalor %>,00</span> por R$ <span><%= results.data[i].valor %>,00</span>
+          </p>
+        </div>
+      </li>
+    <% } %>
+  </ul>
+  <br/>
+
+  <% include partials/pagination  %> 
+
+  
+
+
+<% include partials/footer %> 
